@@ -2,20 +2,16 @@
 
 version       = "0.1.0"
 author        = "h00k86"
-description   = "awesome tool for generate react components"
+description   = "create react component from the cli"
 license       = "MIT"
 srcDir        = "."
-bin           = @["bubblescode"]
-installDirs   = @["build"]
+bin           = @["main"]
 
 # Dependencies
-
 requires "nim >= 2.0.8"
 
+task buildproject," compile the project":
+ exec "nim c --out:./build/bubblescode main.nim"
 
-
-# TASKS
-
-task compile,"compiling file":
-  exec "nim c --outdir:build main.nim"
-
+task clear ,"remove everything in build dir":
+ exec "rm -rf ./build/*"

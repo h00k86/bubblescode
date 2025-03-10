@@ -4,7 +4,5 @@ import src/code_generator
 
 
 when isMainModule:
-  echo "parse script"
-  parse_input()
-  create_component()
-
+ var cmp = parse_input()
+ create_component(cmp.component,cmp.props, cmp.state) 
